@@ -36,11 +36,6 @@ webyneter/docker-aliases.git
 leophys/zsh-plugin-fzf-finder
 jeanpantoja/dotpyvenv
 
-# These plugins must be last.
-sindresorhus/pure
-zdharma/fast-syntax-highlighting
-zsh-users/zsh-history-substring-search
-
 iam4x/zsh-iterm-touchbar
 chrissicool/zsh-256color
 unixorn/autoupdate-antigen.zshplugin
@@ -48,11 +43,10 @@ zpm-zsh/dropbox
 iboyperson/zsh-pipenv
 joow/macos
 
-webyneter/docker-aliases.git
 leophys/zsh-plugin-fzf-finder
-jeanpantoja/dotpyvenv
-robbyrussell/oh-my-zsh path:plugins/brew
-robbyrussell/oh-my-zsh path:plugins/taskwarrior
-vladmyr/dotfiles-plugin
+# These plugins must be last.
+sindresorhus/pure
+zdharma/fast-syntax-highlighting
+zsh-users/zsh-history-substring-search
 
 
