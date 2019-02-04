@@ -5,6 +5,7 @@ caarlos0/zsh-git-sync kind:path
 caarlos0/zsh-mkc
 caarlos0/zsh-open-pr kind:path
 rupa/z
+mafredri/zsh-async
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 
@@ -21,13 +22,7 @@ jeanpantoja/dotpyvenv
 robbyrussell/oh-my-zsh path:plugins/brew
 twang817/zsh-ssh-agent
 
-mafredri/zsh-async
-zsh-users/zsh-completions
-zsh-users/zsh-autosuggestions
-
-leophys/zsh-plugin-fzf-finder
-
-x# These plugins must be last.
+# These plugins must be last.
 sindresorhus/pure
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
