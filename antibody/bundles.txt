@@ -27,3 +27,11 @@ vladmyr/dotfiles-plugin
 sindresorhus/pure
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
+
+iam4x/zsh-iterm-touchbar
+chrissicool/zsh-256color
+unixorn/autoupdate-antigen.zshplugin
+zpm-zsh/dropbox
+iboyperson/zsh-pipenv
+joow/macos
+
