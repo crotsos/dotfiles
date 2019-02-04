@@ -27,7 +27,7 @@ zsh-users/zsh-autosuggestions
 
 leophys/zsh-plugin-fzf-finder
 
-# These plugins must be last.
+x# These plugins must be last.
 sindresorhus/pure
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
