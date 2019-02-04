@@ -53,6 +53,7 @@ Plug 'moll/vim-bbye'
 
 " Colors
 Plug 'nikitavoloboev/vim-monokai-night'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -230,6 +231,8 @@ if exists('+termguicolors')
   set termguicolors
 endif
 :silent! colorscheme monokai-night
+colorscheme nord
+
 "set background=dark
 " let g:hybrid_use_Xresources = 1
 " let g:rehash256 = 1
