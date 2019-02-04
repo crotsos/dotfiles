@@ -19,6 +19,13 @@ joow/macos
 leophys/zsh-plugin-fzf-finder
 jeanpantoja/dotpyvenv
 
+iam4x/zsh-iterm-touchbar
+chrissicool/zsh-256color
+unixorn/autoupdate-antigen.zshplugin
+zpm-zsh/dropbox
+iboyperson/zsh-pipenv
+joow/macos
+
 # these should be at last!
 sindresorhus/pure
 zdharma/fast-syntax-highlighting
