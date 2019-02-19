@@ -82,3 +82,6 @@ if test -d /usr/local/opt/fzf/shell; then
 else
 	bindkey '^R' history-incremental-search-backward
 fi
+
+
+export PATH=$PATH:/usr/local/bin/
