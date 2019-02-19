@@ -35,3 +35,10 @@ zpm-zsh/dropbox
 iboyperson/zsh-pipenv
 joow/macos
 
+webyneter/docker-aliases.git
+leophys/zsh-plugin-fzf-finder
+jeanpantoja/dotpyvenv
+robbyrussell/oh-my-zsh path:plugins/brew
+vladmyr/dotfiles-plugin
+
+
