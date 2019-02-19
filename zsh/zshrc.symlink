@@ -13,14 +13,24 @@ export EDITOR='vim'
 export VEDITOR='code'
 
 # load antigen
-source /usr/share/zsh/share/antigen.zsh
+if [ -e  /usr/share/zsh/share/antigen.zsh ]; then
+    source /usr/share/zsh/share/antigen.zsh;
+fi
+
+if [ -e /usr/local/Cellar/antigen/2.2.3/share/antigen/antigen.zsh ]; then
+    source /usr/local/Cellar/antigen/2.2.3/share/antigen/antigen.zsh
+fi
+
+# source antigen
+if  [ -e /home/linuxbrew/.linuxbrew/share/antigen/antigen.zsh ]; then
+    source /home/linuxbrew/.linuxbrew/share/antigen/antigen.zsh;
+
+fi
 
 # all of our zsh files
 typeset -U config_files
 config_files=($DOTFILES/*/*.zsh)
 
-# source antigen
-source /home/linuxbrew/.linuxbrew/share/antigen/antigen.zsh
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}; do
