@@ -59,6 +59,8 @@ Plug 'arcticicestudio/nord-vim'
 
 Plug 'blindFS/vim-taskwarrior'
 
+Plug 'blindFS/vim-taskwarrior'
+
 call plug#end()
 
 set nocompatible              " be iMproved, required
