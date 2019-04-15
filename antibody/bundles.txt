@@ -18,8 +18,8 @@ joow/macos
 
 leophys/zsh-plugin-fzf-finder
 jeanpantoja/dotpyvenv
-# these should be at last!
 
+# these should be at last!
 sindresorhus/pure
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
