@@ -35,6 +35,8 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'puppetlabs/puppet-syntax-vim'
 Plug 'luochen1990/rainbow'
 Plug 'hashivim/vim-terraform'
+Plug 'Valloric/YouCompleteMe'
+Plug 'lervag/vimtex'
 
 " git integration
 Plug 'tpope/vim-fugitive'
@@ -53,6 +55,8 @@ Plug 'moll/vim-bbye'
 
 " Colors
 Plug 'nikitavoloboev/vim-monokai-night'
+
+Plug 'blindFS/vim-taskwarrior'
 
 call plug#end()
 
@@ -588,4 +592,10 @@ let g:airline#extensions#tabline#enabled = 0
 " =================== rainbow ============================
 let g:rainbow_active = 1
 
+" =================== YouCompleteMe ======================
+let g:ycm_auto_trigger=0
+
+
+"
+"
 " vim:ts=2:sw=2:et
