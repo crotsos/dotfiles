@@ -76,12 +76,8 @@ Plug 'moll/vim-bbye'
 
 " Colors
 Plug 'nikitavoloboev/vim-monokai-night'
-<<<<<<< HEAD
 Plug 'ayu-theme/ayu-vim'
-=======
 Plug 'arcticicestudio/nord-vim'
-
->>>>>>> add a few more bundles for antibody
 call plug#end()
 
 set nocompatible              " be iMproved, required
