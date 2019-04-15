@@ -39,7 +39,7 @@ Plug 'tpope/vim-endwise'
 Plug 'elzr/vim-json'
 Plug 'junegunn/vim-easy-align'
 Plug 'luochen1990/rainbow'
-Plug 'hashivim/vim-terraform'
+Plug 'lervag/vimtex'
 
 
 
@@ -77,6 +77,8 @@ Plug 'moll/vim-bbye'
 " Colors
 Plug 'nikitavoloboev/vim-monokai-night'
 Plug 'ayu-theme/ayu-vim'
+
+Plug 'blindFS/vim-taskwarrior'
 
 call plug#end()
 
@@ -1017,4 +1019,6 @@ nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 "
 tnoremap <Esc> <C-\><C-n>
 
+"
+"
 " vim:ts=2:sw=2:et
