@@ -78,8 +78,6 @@ Plug 'moll/vim-bbye'
 Plug 'nikitavoloboev/vim-monokai-night'
 Plug 'ayu-theme/ayu-vim'
 
-Plug 'blindFS/vim-taskwarrior'
-
 call plug#end()
 
 set nocompatible              " be iMproved, required
@@ -868,6 +866,7 @@ if isdirectory(expand("~/.vim/bundle/nerdtree"))
   let g:nerdtree_tabs_open_on_gui_startup=0
 endif
 
+<<<<<<< HEAD
 " ================== Denite ===================================
 " Define mappings
 autocmd FileType denite call s:denite_my_settings()
@@ -885,6 +884,13 @@ function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <Space>
   \ denite#do_map('toggle_select').'j'
 endfunction
+=======
+" =================== YouCompleteMe ===========================
+let g:acp_enableAtStartup = 0
+
+" enable completion from tags
+let g:ycm_collect_identifiers_from_tags_files = 1
+>>>>>>> fixing c++ in vim
 
 " remap Ultisnips for compatibility for YCM
 let g:UltiSnipsExpandTrigger = '<C-j>'
@@ -1015,10 +1021,16 @@ let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
 
 nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 
+<<<<<<< HEAD
 " terminal
 "
 tnoremap <Esc> <C-\><C-n>
 
 "
 "
+=======
+" ===================== YouCompleteMe ===================
+let g:ymc_auto_trigger=0
+
+>>>>>>> fixing c++ in vim
 " vim:ts=2:sw=2:et
