@@ -46,6 +46,7 @@ Plug 'honza/vim-snippets'                 " snippets repo
 Plug 'klen/python-mode'                 " snippets repo
 Plug 'scrooloose/syntastic'                 " snippets repo
 Plug 'tpope/vim-commentary'
+Plug 'lervag/vimtex'
 
 " git integration
 Plug 'tpope/vim-fugitive'
@@ -66,6 +67,8 @@ Plug 'moll/vim-bbye'
 " Colors
 Plug 'nikitavoloboev/vim-monokai-night'
 Plug 'ayu-theme/ayu-vim'
+
+Plug 'blindFS/vim-taskwarrior'
 
 call plug#end()
 
@@ -600,7 +603,6 @@ let g:airline#extensions#tabline#enabled = 0
 
 " =================== rainbow ============================
 let g:rainbow_active = 1
-
 
 " =================== NERDTree ===========================
 if isdirectory(expand("~/.vim/bundle/nerdtree"))
