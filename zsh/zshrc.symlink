@@ -9,6 +9,9 @@ export PROJECTS="$HOME/Code"
 export EDITOR='vim'
 export VEDITOR='code'
 
+# load antigen
+source /usr/local/share/antigen/antigen.zsh
+
 # all of our zsh files
 typeset -U config_files
 config_files=($DOTFILES/*/*.zsh)
@@ -45,3 +48,6 @@ unset config_files updated_at
 # want in your public, versioned repo.
 # shellcheck disable=SC1090
 [ -f ~/.localrc ] && . ~/.localrc
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

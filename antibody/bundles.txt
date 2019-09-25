@@ -26,5 +26,3 @@ leophys/zsh-plugin-fzf-finder
 jeanpantoja/dotpyvenv
 robbyrussell/oh-my-zsh path:plugins/brew
 vladmyr/dotfiles-plugin
-
-
