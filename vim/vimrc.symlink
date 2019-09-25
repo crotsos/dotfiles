@@ -1,8 +1,6 @@
 " load plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'fatih/vim-go', {'tag': '*', 'do': ':GoInstallBinaries' }
-Plug 'nsf/gocode', {'rtp': 'vim'}
 
 " auto-complete for golang et al
 if has('nvim')
@@ -12,6 +10,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+<<<<<<< HEAD
 Plug 'Shougo/denite.nvim'
 " Plug 'Shougo/deoplete-clangx'
 " Plug 'Shougo/neoinclude.vim'
@@ -20,6 +19,8 @@ Plug 'rhysd/vim-clang-format'
 
 Plug 'justmao945/vim-clang'
 Plug 'neomake/neomake'
+=======
+>>>>>>> Update vim config
 
 " provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'Raimondi/delimitMate'
@@ -44,6 +45,7 @@ Plug 'puppetlabs/puppet-syntax-vim'
 Plug 'luochen1990/rainbow'
 Plug 'hashivim/vim-terraform'
 Plug 'lervag/vimtex'
+<<<<<<< HEAD
 Plug 'majutsushi/tagbar'
 
 " terminal
@@ -58,6 +60,10 @@ Plug 'scrooloose/syntastic'                 " snippets repo
 Plug 'tpope/vim-commentary'
 Plug 'neomake/neomake'
 "
+=======
+Plug 'neomake/neomake'
+
+>>>>>>> Update vim config
 " git integration
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -73,6 +79,22 @@ Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 " Delete buffers and close files in Vim without closing your windows or
 " messing up your layout
 Plug 'moll/vim-bbye'
+
+
+Plug 'Shougo/dein.vim'
+Plug 'Shougo/denite.nvim'
+
+Plug 'tpope/vim-commentary'
+Plug 'python-mode/python-mode'
+Plug 'majutsushi/tagbar'
+Plug 'ivanov/vim-ipython'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'lervag/vimtex'
+
 
 " Colors
 Plug 'nikitavoloboev/vim-monokai-night'
@@ -500,50 +522,6 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gp :Gpush<CR>
 vnoremap <leader>gb :Gblame<CR>
 
-" ==================== Vim-go ====================
-" let g:go_version_warning = 0
-" let g:go_fmt_fail_silently = 0
-" let g:go_fmt_command = "goimports"
-" let g:go_autodetect_gopath = 1
-" let g:go_term_enabled = 1
-" let g:go_snippet_engine = "neosnippet"
-" let g:go_highlight_space_tab_error = 0
-" let g:go_highlight_array_whitespace_error = 0
-" let g:go_highlight_trailing_whitespace_error = 0
-" let g:go_highlight_extra_types = 0
-" let g:go_highlight_operators = 0
-" let g:go_highlight_build_constraints = 1
-"
-
-au FileType go nmap <Leader>s <Plug>(go-def-split)
-au FileType go nmap <Leader>v <Plug>(go-def-vertical)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>l <Plug>(go-metalinter)
-
-au FileType go nmap <leader>r  <Plug>(go-run)
-
-au FileType go nmap <leader>b  <Plug>(go-build)
-au FileType go nmap <leader>t  <Plug>(go-test)
-au FileType go nmap <leader>dt  <Plug>(go-test-compile)
-au FileType go nmap <Leader>d <Plug>(go-doc)
-
-au FileType go nmap <Leader>e <Plug>(go-rename)
-
-" neovim specific
-if has('nvim')
-  au FileType go nmap <leader>rt <Plug>(go-run-tab)
-  au FileType go nmap <Leader>rs <Plug>(go-run-split)
-  au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
-endif
-
-" I like these more!
-augroup go
-  autocmd!
-  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-augroup END
-
 " ==================== delimitMate ====================
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_expand_space = 1
@@ -569,6 +547,7 @@ let g:vim_json_syntax_conceal = 0
 
 " ==================== Completion =========================
 " use deoplete for Neovim.
+set runtimepath+=~/.vim/plugged/deoplete.nvim/
 if has('nvim')
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#ignore_sources = {}
