@@ -1,0 +1,7 @@
+set realname="Charalampos (Haris) Rotsos"
+set from="h.rotsos@gmail.com"
+
+set smtp_url="smtps://h.rotsos@gmail.com@smtp.gmail.com:465/"
+set smtp_pass="$my_gmail_password"
+# `op get item gmail-pass | jq '.details.password'`
+set smtp_authenticators="gssapi:login"

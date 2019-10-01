@@ -1,0 +1,13 @@
+# -*- Mode: muttrc -*-
+
+# Identifying myself
+set realname = 'Haris (Charalampos) Rotsos'
+set from = 'h.rotsos@gmail.com'
+set sig_dashes="yes"
+set signature = "~/.mutt/signature"
+
+source ~/.mutt/accounts/h.rotsos@gmail.com/imap
+source ~/.mutt/accounts/h.rotsos@gmail.com/smtp
+source ~/.mutt/accounts/h.rotsos@gmail.com/mailboxes
+
+

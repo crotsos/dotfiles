@@ -1,0 +1,8 @@
+set realname="Charalampos (Haris) Rotsos"
+set from="c.rotsos@lancaster.ac.uk"
+
+set smtp_url="smtp://rotsos@lancaster.ac.uk@smtp.office365.com:587/"
+set smtp_pass="$my_scc_password"
+# `op get item scc-mail-pass | jq '.details.password'`
+set ssl_force_tls = yes
+set smtp_authenticators="login"
