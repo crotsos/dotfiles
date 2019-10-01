@@ -1,0 +1,21 @@
+# -*- Mode: muttrc -*-
+macro index b '<enter-command>toggle sidebar_visible<enter>'
+macro pager b '<enter-command>toggle sidebar_visible<enter>'
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+color sidebar_new yellow default
+set sidebar_visible
+set sidebar_width=20
+set sidebar_delim_chars   = '  │'
+
+set sidebar_format = '%B %?N?(%N)?%* %S'
+set sidebar_sort_method = 'path'
+set sidebar_delim_chars = '/.'
+set sidebar_folder_indent
+set sidebar_indent_string = '  '
+set sidebar_new_mail_only = yes
+set sidebar_next_new_wrap = yes
+set sidebar_on_right = no
+set mail_check_stats = yes
+

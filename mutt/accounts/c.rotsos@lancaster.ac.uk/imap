@@ -1,0 +1,15 @@
+set imap_user="rotsos@lancaster.ac.uk"
+set imap_pass="$my_scc_password"
+
+set folder=imaps://outlook.office365.com/
+set spoolfile="+INBOX"
+set record="+Sent Items"
+set postponed="+Drafts"
+
+# https://www.neomutt.org/guide/reference search sleep_time for additional info
+set sleep_time=0 # be faster
+set beep=yes # no beep sound
+auto_view text/html
+
+macro index,pager A  "<save-message>=archive<enter><enter><sync-mailbox>"  "mark message as Archived"
+
