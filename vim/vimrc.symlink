@@ -586,7 +586,7 @@ if ( has('macunix') || has('win32')) && executable('latex')
     let g:matchup_override_vimtex = 1
 
     " Set up LaTeX flavor
-    let g:tex_flavor = 'latex'
+    let g:tex_flavor = 'luatex'
 
     " Deoplete configurations for autocompletion to work
     call deoplete#custom#var('omni', 'input_patterns', {
@@ -596,6 +596,7 @@ if ( has('macunix') || has('win32')) && executable('latex')
     let g:vimtex_compiler_latexmk = {
          \ 'build_dir' : 'build',
         \}
+    let g:vimtex_compiler_progname = 'nvr'
 
     " TOC settings
     let g:vimtex_toc_config = {
