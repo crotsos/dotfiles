@@ -1,0 +1,128 @@
+# -*- Mode: muttrc -*-
+
+# Caches
+set header_cache='~/.mutt/.cache/headercache'
+set message_cachedir='~/.mutt/.cache/messagecache'
+set certificate_file='~/.mutt/.cache/certificates'
+
+# Automatic viewing html
+auto_view text/html
+
+# Sync and check intervals
+set read_inc = 100
+set mail_check = 90
+set timeout = 15
+
+# Futher config
+set tmpdir=~/.mutt/tmp
+set mailcap_path=~/.mutt/mailcap
+set abort_nosubject = ask-yes
+set abort_unmodified = yes
+set delete = yes
+set content_type = 'text/plain'
+set mark_old = no
+set recall = no
+
+
+set editor              = "nvim -c 'set spell spelllang=en_us' -c \
+                        'set colorcolumn=72' -c 'startinsert' -c \
+                        'set tw=72 et' -c 'set wrap' '+/^$'"
+set sig_dashes
+set fcc_attach
+set reply_to
+set reverse_name
+set include             # the next 3 set's are to
+set edit_headers        # go right to vim and edit through that composition
+set autoedit            # window, rather than mutt giving me 21 questions
+unset mime_forward
+set smart_wrap
+
+#set mbox_type           = Maildir
+set timeout             ="0"
+set mail_check          ="0"
+set mail_check_stats    ="yes"
+set delete
+set quit
+set pipe_decode
+set thorough_search
+unset confirmappend
+unset mark_old
+
+# h e a d e r s
+ignore *
+unignore from: subject: Cc:
+hdr_order Fom: To: Cc: Date:
+#unignore From: Subject: To: Cc:
+
+set forward_quote
+set forward_format      = "Fwd: %s"
+set date_format         = "%m/%d"
+set index_format        = "%Z⌈%D⌋ %-20.20F ⌜%s⌟"
+#set implicit_autoview
+#alternative_order       text/plain text/html text/encriched
+#auto_view               text/html
+set sort                = "threads"
+set sort_browser        = "alpha"
+set folder_format       = '%N %4C %4s bytes %2F %2f'
+set sort_aux            = "last-date-received"
+set uncollapse_jump
+set sort_re
+set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+set pager_index_lines   = 20
+set pager_context       = 20
+set pager_stop
+set menu_scroll
+set tilde
+unset markers
+set attribution         = "On %d, %n wrote:"
+set quote_regexp        = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set status_chars        = " *%A"
+
+# folder hooks to avoid long folder paths
+folder-hook =inbox 'set status_format   = "[inbox]%> %u unread %m total %p postponed"'
+folder-hook =sent 'set status_format    = "[sent]%> %m total"'
+folder-hook =drafts 'set status_format  = "[drafts]%>  %m total"'
+folder-hook =trash 'set status_format   = "[trash] %> %m total"'
+folder-hook =all 'set status_format     = "[all] %> %u unread %m total %p postponed"'
+
+# mailboxes
+mailboxes "=inbox" "=sent" "=drafts" "=spam" "=trash" "=all"
+
+#bind generic,pager,editor,index d noop
+bind index g noop
+bind index gg       first-entry
+bind index  G       last-entry
+bind index  p       recall-message
+bind index  R       group-reply
+bind index <tab>    sync-mailbox
+bind index <space>  collapse-thread
+macro index d "<delete-message><exit"
+macro index,pager H view-mailcap
+
+macro index gd "<change-folder>=drafts<enter>" "Go to drafts"
+macro index gi "<change-folder>=inbox<enter>" "Go to inbox"
+macro index gs "<change-folder>=starred<enter>" "Go to starred messages"
+macro index gt "<change-folder>=trash<enter>" "Go to trash"
+macro index,pager d "<save-message>=trash<enter>" "Trash"
+bind index,pager Y noop
+macro index,pager ,YY "<save-message>=Archive<enter>" "Archive"
+
+#sidebar
+bind index,pager B sidebar-toggle-visible
+bind index,pager <down> sidebar-next
+bind index,pager <up> sidebar-prev
+bind index,pager <right> sidebar-open
+
+#pager
+bind pager k previous-line
+bind pager j next-line
+bind pager g noop
+bind pager gg top
+bind pager G bottom
+bind pager R group-reply
+
+#mailcap
+bind attach <return> view-mailcap
+
+

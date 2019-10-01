@@ -1,0 +1,29 @@
+# -*- Mode: Muttrc -*-
+# config for the lincoln@comum.org account
+
+source ~/.mutt/inc/base
+# source ~/.mutt/inc/pgp
+source ~/.mutt/inc/colors.narksuckersperg
+source ~/.mutt/inc/sidebar
+
+set my_scc_password=`op get item scc-mail-pass | jq '.details.password'`
+set my_gmail_password=`op get item gmail-pass | jq '.details.password'`
+
+
+source ~/.mutt/accounts/h.rotsos@gmail.com/ident
+
+source ~/.mutt/accounts/c.rotsos@lancaster.ac.uk/ident
+
+
+
+macro index <f4> '<sync-mailbox><enter-command>\
+    source ~/.mutt/accounts/c.rotsos@lancaster.ac.uk/ident\
+    <enter><change-folder>!<enter>'
+macro index <f5> '<sync-mailbox><enter-command>\
+    source ~/.mutt/accounts/h.rotsos@gmail.com/ident\
+    <enter><change-folder>!<enter>'
+
+macro pager \Cb "|urlview<enter>" "call urlview to open links" #ctrl-b to open links in browser
+
+set query_command="contacts -m '%s'"
+

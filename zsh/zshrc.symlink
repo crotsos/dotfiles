@@ -9,7 +9,7 @@ export DOTFILES="$HOME/.dotfiles"
 export PROJECTS="$HOME/Code"
 
 # your default editor
-export EDITOR='vim'
+export EDITOR='nvim'
 export VEDITOR='code'
 
 # load antigen
@@ -18,9 +18,6 @@ source /usr/share/zsh/share/antigen.zsh
 # all of our zsh files
 typeset -U config_files
 config_files=($DOTFILES/*/*.zsh)
-
-# source antigen
-source /home/linuxbrew/.linuxbrew/share/antigen/antigen.zsh
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}; do
@@ -56,3 +53,4 @@ export PATH=$PATH:~/.local/bin/
 # shellcheck disable=SC1090
 [ -f ~/.localrc ] && . ~/.localrc
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

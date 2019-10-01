@@ -1,0 +1,13 @@
+set imap_user="h.rotsos@gmail.com"
+set imap_pass="$my_gmail_password"
+# `op get item gmail-pass | jq '.details.password'`
+
+set folder=imaps://imap.gmail.com/
+set spoolfile=+INBOX
+set record="+[Google Mail]/Sent Mail"
+set postponed="+[Google Mail]/Drafts"
+
+# https://www.neomutt.org/guide/reference search sleep_time for additional info
+set sleep_time=0 # be faster
+set beep=yes # no beep sound
+auto_view text/html
