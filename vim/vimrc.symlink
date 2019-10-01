@@ -1,8 +1,6 @@
 " load plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'fatih/vim-go', {'tag': '*', 'do': ':GoInstallBinaries' }
-Plug 'nsf/gocode', {'rtp': 'vim'}
 
 " auto-complete for golang et al
 if has('nvim')
@@ -12,7 +10,6 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'Raimondi/delimitMate'
@@ -35,6 +32,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'puppetlabs/puppet-syntax-vim'
 Plug 'luochen1990/rainbow'
 Plug 'hashivim/vim-terraform'
+Plug 'neomake/neomake'
 
 " git integration
 Plug 'tpope/vim-fugitive'
@@ -51,8 +49,27 @@ Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 " messing up your layout
 Plug 'moll/vim-bbye'
 
+
+Plug 'Shougo/dein.vim'
+Plug 'Shougo/denite.nvim'
+
+Plug 'tpope/vim-commentary'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'python-mode/python-mode'
+Plug 'majutsushi/tagbar'
+Plug 'ivanov/vim-ipython'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'lervag/vimtex'
+
+
 " Colors
 Plug 'nikitavoloboev/vim-monokai-night'
+Plug 'ayu-theme/ayu-vim'
+Plug 'rhysd/vim-grammarous'
 
 call plug#end()
 
@@ -463,50 +480,6 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gp :Gpush<CR>
 vnoremap <leader>gb :Gblame<CR>
 
-" ==================== Vim-go ====================
-let g:go_version_warning = 0
-let g:go_fmt_fail_silently = 0
-let g:go_fmt_command = "goimports"
-let g:go_autodetect_gopath = 1
-let g:go_term_enabled = 1
-let g:go_snippet_engine = "neosnippet"
-let g:go_highlight_space_tab_error = 0
-let g:go_highlight_array_whitespace_error = 0
-let g:go_highlight_trailing_whitespace_error = 0
-let g:go_highlight_extra_types = 0
-let g:go_highlight_operators = 0
-let g:go_highlight_build_constraints = 1
-
-
-au FileType go nmap <Leader>s <Plug>(go-def-split)
-au FileType go nmap <Leader>v <Plug>(go-def-vertical)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>l <Plug>(go-metalinter)
-
-au FileType go nmap <leader>r  <Plug>(go-run)
-
-au FileType go nmap <leader>b  <Plug>(go-build)
-au FileType go nmap <leader>t  <Plug>(go-test)
-au FileType go nmap <leader>dt  <Plug>(go-test-compile)
-au FileType go nmap <Leader>d <Plug>(go-doc)
-
-au FileType go nmap <Leader>e <Plug>(go-rename)
-
-" neovim specific
-if has('nvim')
-  au FileType go nmap <leader>rt <Plug>(go-run-tab)
-  au FileType go nmap <Leader>rs <Plug>(go-run-split)
-  au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
-endif
-
-" I like these more!
-augroup go
-  autocmd!
-  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-augroup END
-
 " ==================== delimitMate ====================
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_expand_space = 1
@@ -532,6 +505,7 @@ let g:vim_json_syntax_conceal = 0
 
 " ==================== Completion =========================
 " use deoplete for Neovim.
+set runtimepath+=~/.vim/plugged/deoplete.nvim/
 if has('nvim')
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#ignore_sources = {}
@@ -587,5 +561,113 @@ let g:airline#extensions#tabline#enabled = 0
 
 " =================== rainbow ============================
 let g:rainbow_active = 1
+
+" =================== Deinit =============
+set runtimepath+=$HOME/.config/nvim/plugins/repos/github.com/Shougo/dein.vim
+if dein#load_state(expand('~/.config/nvim/plugins'))
+  call dein#begin(expand('~/.config/nvim/plugins'))
+  call dein#add('Shougo/dein.vim')
+  call dein#add('Shougo/denite.nvim')
+  call dein#add('zchee/deoplete-clang')
+endif
+if dein#check_install()
+  call dein#install()
+endif
+
+" This is new style
+call deoplete#custom#var('omni', 'input_patterns', {
+      \ 'tex': g:vimtex#re#deoplete
+      \})
+
+"{{ LaTeX editting
+""""""""""""""""""""""""""""vimtex settings"""""""""""""""""""""""""""""
+if ( has('macunix') || has('win32')) && executable('latex')
+    " Enhanced matching with matchup plugin
+    let g:matchup_override_vimtex = 1
+
+    " Set up LaTeX flavor
+    let g:tex_flavor = 'latex'
+
+    " Deoplete configurations for autocompletion to work
+    call deoplete#custom#var('omni', 'input_patterns', {
+              \ 'tex': g:vimtex#re#deoplete
+              \})
+
+    let g:vimtex_compiler_latexmk = {
+         \ 'build_dir' : 'build',
+        \}
+
+    " TOC settings
+    let g:vimtex_toc_config = {
+          \ 'name' : 'TOC',
+          \ 'layers' : ['content', 'todo', 'include'],
+          \ 'resize' : 1,
+          \ 'split_width' : 30,
+          \ 'todo_sorted' : 0,
+          \ 'show_help' : 1,
+          \ 'show_numbers' : 1,
+          \ 'mode' : 2,
+          \}
+
+    " Viewer settings for different platforms
+    if has('win32')
+        let g:vimtex_view_general_viewer = 'SumatraPDF'
+        let g:vimtex_view_general_options_latexmk = '-reuse-instance'
+        let g:vimtex_view_general_options
+            \ = '-reuse-instance -forward-search @tex @line @pdf'
+    endif
+
+    if has('macunix')
+        " let g:vimtex_view_method = "skim"
+        let g:vimtex_view_general_viewer
+                \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+        let g:vimtex_view_general_options = '-r @line @pdf @tex'
+
+        " This adds a callback hook that updates Skim after compilation
+        let g:vimtex_compiler_callback_hooks = ['UpdateSkim']
+
+        function! UpdateSkim(status)
+            if !a:status | return | endif
+
+            let l:out = b:vimtex.out()
+            let l:tex = expand('%:p')
+            let l:cmd = [g:vimtex_view_general_viewer, '-r']
+
+            if !empty(system('pgrep Skim'))
+                call extend(l:cmd, ['-g'])
+            endif
+
+            if has('nvim')
+                call jobstart(l:cmd + [line('.'), l:out, l:tex])
+            elseif has('job')
+                call job_start(l:cmd + [line('.'), l:out, l:tex])
+            else
+                call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
+            endif
+        endfunction
+    endif
+endif
+"}}
+
+
+"{{ Linting and formating
+"""""""""""""""""""""""""""""" neomake settings """""""""""""""""""""""
+" When to activate neomake
+call neomake#configure#automake('nrw', 50)
+
+" Change warning signs and color, see https://goo.gl/eHcjSq.
+let g:neomake_warning_sign={'text': '!', 'texthl': 'NeomakeWarningSign'}
+let g:neomake_error_sign={'text': '✗'}
+
+" Linters enabled for Python source file linting
+let g:neomake_python_enabled_makers = ['pylint']
+
+" Whether to open quickfix or location list automatically
+let g:neomake_open_list = 0
+
+" Which linter to use for TeX source files
+let g:neomake_tex_enabled_makers = ['proselint', 'chktex']
+"}}
+
 
 " vim:ts=2:sw=2:et
