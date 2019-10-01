@@ -54,6 +54,7 @@ Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
 
 " terminal
+Plug 'kassio/neoterm'
 
 "snippets
 Plug 'garbas/vim-snipmate'                " Snippets manager
@@ -1007,6 +1008,7 @@ let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
 
 nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 
+<<<<<<< HEAD
 " =================== Deinit =============
 set runtimepath+=$HOME/.config/nvim/plugins/repos/github.com/Shougo/dein.vim
 if dein#load_state(expand('~/.config/nvim/plugins'))
@@ -1150,4 +1152,10 @@ let g:neomake_tex_enabled_makers = ['proselint', 'chktex']
 " terminal
 "
 tnoremap <Esc> <C-\><C-n>
+=======
+" terminal
+"
+tnoremap <Esc> <C-\><C-n>
+
+>>>>>>> add neoterm and imrpove browsing
 " vim:ts=2:sw=2:et
