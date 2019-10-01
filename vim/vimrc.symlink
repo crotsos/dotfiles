@@ -13,7 +13,13 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'Shougo/denite.nvim'
-Plug 'deoplete-plugins/deoplete-clang'
+" Plug 'Shougo/deoplete-clangx'
+" Plug 'Shougo/neoinclude.vim'
+Plug 'lionawurscht/deoplete-biblatex'
+Plug 'rhysd/vim-clang-format'
+
+Plug 'justmao945/vim-clang'
+Plug 'neomake/neomake'
 
 " provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'Raimondi/delimitMate'
@@ -132,7 +138,9 @@ autocmd FileType help wincmd L
 " Make Vim to handle long lines nicely.
 set wrap
 set textwidth=79
-set formatoptions=qrn1
+set formatoptions=qrnt1
+set fo+=t
+set fo-=l
 "set colorcolumn=79
 "set relativenumber
 "set norelativenumber
