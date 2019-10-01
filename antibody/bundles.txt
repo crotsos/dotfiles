@@ -4,7 +4,6 @@ caarlos0/zsh-git-fetch-merge kind:path
 caarlos0/zsh-git-sync kind:path
 caarlos0/zsh-mkc
 caarlos0/zsh-open-pr kind:path
-mafredri/zsh-async
 rupa/z
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
@@ -20,21 +19,16 @@ webyneter/docker-aliases.git
 leophys/zsh-plugin-fzf-finder
 jeanpantoja/dotpyvenv
 robbyrussell/oh-my-zsh path:plugins/brew
+twang817/zsh-ssh-agent
 
-# these should be at last!
+mafredri/zsh-async
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+
+leophys/zsh-plugin-fzf-finder
+
+# These plugins must be last.
 sindresorhus/pure
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
-
-iam4x/zsh-iterm-touchbar
-chrissicool/zsh-256color
-unixorn/autoupdate-antigen.zshplugin
-zpm-zsh/dropbox
-iboyperson/zsh-pipenv
-joow/macos
-
-webyneter/docker-aliases.git
-leophys/zsh-plugin-fzf-finder
-jeanpantoja/dotpyvenv
-robbyrussell/oh-my-zsh path:plugins/brew
-vladmyr/dotfiles-plugin
+zdharma/history-search-multi-word
