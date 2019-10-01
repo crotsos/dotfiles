@@ -47,7 +47,6 @@ Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
 
 " terminal
-Plug 'kassio/neoterm'
 
 "snippets
 Plug 'garbas/vim-snipmate'                " Snippets manager
@@ -58,7 +57,7 @@ Plug 'klen/python-mode'                 " snippets repo
 Plug 'scrooloose/syntastic'                 " snippets repo
 Plug 'tpope/vim-commentary'
 Plug 'neomake/neomake'
-
+"
 " git integration
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
