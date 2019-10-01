@@ -1,8 +1,8 @@
 " load plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'fatih/vim-go', {'tag': '*', 'do': ':GoInstallBinaries' }
-Plug 'nsf/gocode', {'rtp': 'vim'}
+"Plug 'fatih/vim-go', {'tag': '*', 'do': ':GoInstallBinaries' }
+" Plug 'nsf/gocode', {'rtp': 'vim'}
 
 " auto-complete for golang et al
 if has('nvim')
@@ -25,7 +25,8 @@ Plug 'neomake/neomake'
 Plug 'Raimondi/delimitMate'
 
 " fuzzy file finder
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', {'do': './install --all'}
+Plug 'junegunn/fzf.vim'
 
 " langs et al
 Plug 'cespare/vim-toml'
