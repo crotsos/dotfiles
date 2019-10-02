@@ -9,8 +9,11 @@ export DOTFILES="$HOME/.dotfiles"
 export PROJECTS="$HOME/Code"
 
 # your default editor
-export EDITOR='vim'
+export EDITOR='nvim'
 export VEDITOR='code'
+
+# load antigen
+source /usr/share/zsh/share/antigen.zsh
 
 # all of our zsh files
 typeset -U config_files
@@ -45,6 +48,8 @@ for file in ${(M)config_files:#*/completion.zsh}; do
 done
 
 unset config_files updated_at
+
+export PATH=$PATH:~/.local/bin/
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
