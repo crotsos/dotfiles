@@ -37,7 +37,6 @@ Plug 'junegunn/fzf.vim'
 
 " langs et al
 Plug 'cespare/vim-toml'
-Plug 'fatih/vim-nginx'
 Plug 'fatih/vim-hclfmt'
 Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
@@ -46,11 +45,21 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-endwise'
 Plug 'elzr/vim-json'
 Plug 'junegunn/vim-easy-align'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'puppetlabs/puppet-syntax-vim'
 Plug 'luochen1990/rainbow'
+
+" terminal
+
+"snippets
+Plug 'garbas/vim-snipmate'                " Snippets manager
+Plug 'MarcWeber/vim-addon-mw-utils'       " dependencies #1
+Plug 'tomtom/tlib_vim'                    " dependencies #2
+Plug 'honza/vim-snippets'                 " snippets repo
+Plug 'klen/python-mode'                 " snippets repo
+Plug 'scrooloose/syntastic'                 " snippets repo
+Plug 'tpope/vim-commentary'
 Plug 'hashivim/vim-terraform'
 Plug 'lervag/vimtex'
+Plug 'neomake/neomake'
 Plug 'majutsushi/tagbar'
 
 " terminal
@@ -64,8 +73,6 @@ Plug 'honza/vim-snippets'                 " snippets repo
 Plug 'klen/python-mode'                 " snippets repo
 Plug 'scrooloose/syntastic'                 " snippets repo
 Plug 'tpope/vim-commentary'
-Plug 'neomake/neomake'
-"
 " git integration
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -451,7 +458,6 @@ au BufNewFile,BufRead *.jade setlocal expandtab ts=2 sw=2
 
 augroup filetypedetect
   au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
-  au BufNewFile,BufRead .nginx.conf*,nginx.conf* setf nginx
   au BufNewFile,BufRead *.jade setf pug
 augroup END
 
@@ -915,7 +921,7 @@ endif
 
 set termguicolors     " enable true colors support
 " let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="mirage" " for mirage version of theme
 " let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
 
@@ -932,6 +938,7 @@ let g:snippets_dir='~/.vim/vim-snippets/snippets'
 let g:pymode_python='python'
 let g:syntastic_python_python_exec='python'
 
+" rope
 let g:pymode_rope=0
 let g:pymode_rope_completion=0
 let g:pymode_rope_complete_on_dot=0
@@ -1008,7 +1015,6 @@ let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
 
 nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 
-<<<<<<< HEAD
 " =================== Deinit =============
 set runtimepath+=$HOME/.config/nvim/plugins/repos/github.com/Shougo/dein.vim
 if dein#load_state(expand('~/.config/nvim/plugins'))
@@ -1152,10 +1158,4 @@ let g:neomake_tex_enabled_makers = ['proselint', 'chktex']
 " terminal
 "
 tnoremap <Esc> <C-\><C-n>
-=======
-" terminal
-"
-tnoremap <Esc> <C-\><C-n>
-
->>>>>>> add neoterm and imrpove browsing
 " vim:ts=2:sw=2:et
